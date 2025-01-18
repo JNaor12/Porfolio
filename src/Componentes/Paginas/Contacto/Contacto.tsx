@@ -85,68 +85,79 @@ const Contacto = () => {
         flexDirection="column"
       >
         <Box
-          bgImage={"recursos/planetaTech.png"}
-          backgroundSize={"100% 200%"}
+          bgImage={"recursos/purpleBorder.png"}
           backgroundPosition={"center"}
+          backgroundSize={'70%'}
           backgroundRepeat={"no-repeat"}
           w={"100%"}
           minH={"93vh"}
         >
-          <Text
-            bgClip="text"
-            fontSize="6xl"
-            fontWeight="extrabold"
-            textAlign={"center"}
-            paddingTop={"25px"}
-            className="inter"
-            bgGradient="linear(to-r, white, gray)"
-          >
-            ¡ Contacta conmigo !
-          </Text>
+          <Box>
+            <Text
+              bgClip="text"
+              fontSize="6xl"
+              fontWeight="extrabold"
+              textAlign={"center"}
+              className="inter"
+              bgGradient="linear(to-r, white, #481FE9)"
+              textShadow={"#FE76FF 1px 0 5px"}
+            >
+              ¡ Contacta conmigo !
+            </Text>
+          </Box>
 
-          <Container maxW={"5xl"} mt={100}>
-            <Flex flexWrap="wrap" gridGap={6} justify="center">
-              <Card
-                heading={"Teléfono"}
-                icon={
-                  <Icon as={MdPhoneAndroid} w={10} h={10} color={"black"} />
-                }
-                description={"+34 622 38 39 38"}
-                href={"tel:+34622383938"} // Enlace para llamar
-                enlace={"¡ Llámame !"}
-              />
-              <Card
-                heading={"Currículum"}
-                icon={<Icon as={IoMdDownload} w={10} h={10} color={"grey"} />}
-                description={"Descarga mi CV aquí"}
-                href={"Currículum Vitae CV Carnet.pdf"} // Enlace para descargar
-                enlace={"Descargar"}
-              />
-              <Card
-                heading={"Linkedin"}
-                icon={<Icon as={FaLinkedin} w={10} h={10} color={"#0A63BC"} />}
-                description={"¡Accede a mi perfil de Linkedin!"}
-                href={"https://www.linkedin.com/in/juan-naor-k-a8b9292aa/"} // Enlace a Linkedin
-                enlace={"Juan Naor Kadosh Peña"}
-              />
-              <Card
-                heading={"Correo Electrónico"}
-                icon={<Icon as={SiGmail} w={10} h={10} color={"red"} />}
-                description={"guannaor@gmail.com"}
-                href={"mailto:guannaor@gmail.com"} // Enlace para enviar correo
-                enlace={"¡ Mandame un correo !"}
-              />
-              <Card
-                heading={"Git Hub"}
-                icon={
-                  <Icon as={VscGithubInverted} w={10} h={10} color={"black"} />
-                }
-                description={"Git Hub"}
-                href={"https://github.com/JNaor12"} // Enlace a GitHub
-                enlace={"Visíta mi Git Hub"}
-              />
-            </Flex>
-          </Container>
+          <Box paddingTop={"20px"}>
+            <Container maxW={"5xl"} mt={100}>
+              <Flex flexWrap="wrap" gridGap={6} justify="center">
+                {/* <Card
+                  heading={"Teléfono"}
+                  icon={
+                    <Icon as={MdPhoneAndroid} w={10} h={10} color={"black"} />
+                  }
+                  description={"+34 622 38 39 38"}
+                  href={"tel:+34622383938"} // Enlace para llamar
+                  enlace={"¡ Llámame !"}
+                /> */}
+                <Card
+                  heading={"Currículum"}
+                  icon={<Icon as={IoMdDownload} w={10} h={10} color={"grey"} />}
+                  description={"Descarga mi CV aquí"}
+                  href={"Currículum Vitae CV Carnet.pdf"} // Enlace para descargar
+                  enlace={"Descargar"}
+                />
+                <Card
+                  heading={"Linkedin"}
+                  icon={
+                    <Icon as={FaLinkedin} w={10} h={10} color={"#0A63BC"} />
+                  }
+                  description={"¡Accede a mi perfil de Linkedin!"}
+                  href={"https://www.linkedin.com/in/juan-naor-k-a8b9292aa/"} // Enlace a Linkedin
+                  enlace={"Juan Naor Kadosh Peña"}
+                />
+                <Card
+                  heading={"Correo Electrónico"}
+                  icon={<Icon as={SiGmail} w={10} h={10} color={"red"} />}
+                  description={"guannaor@gmail.com"}
+                  href={"mailto:guannaor@gmail.com"} // Enlace para enviar correo
+                  enlace={"¡ Mandame un correo !"}
+                />
+                <Card
+                  heading={"Git Hub"}
+                  icon={
+                    <Icon
+                      as={VscGithubInverted}
+                      w={10}
+                      h={10}
+                      color={"black"}
+                    />
+                  }
+                  description={"Git Hub"}
+                  href={"https://github.com/JNaor12"} // Enlace a GitHub
+                  enlace={"Visíta mi Git Hub"}
+                />
+              </Flex>
+            </Container>
+          </Box>
         </Box>
       </Box>
     </>
