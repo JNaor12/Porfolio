@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback  } from "react";
+import { useEffect, useState, useCallback } from "react";
 import "../../../App.css";
 import { TSquare } from "./types";
 import { createBoard, randomizeMines, getMinesAround } from "./helper.tsx";
@@ -26,7 +26,7 @@ export default function BuscaMinas() {
     squares = getMinesAround(squares);
     setSquares(squares);
   }, [rows, cols, mines]);
-  
+
   useEffect(() => {
     init();
   }, [init]);
@@ -37,10 +37,10 @@ export default function BuscaMinas() {
 
     if (squares[rowIdx][colIdx].hasBomb) {
       const updatedSquares = squares.map((row) =>
-        row.map((cell) => {
-          if (cell.hasBomb) cell.isRevealed = true;
-          return cell;
-        })
+        row.map((cell) => ({
+          ...cell,
+          isRevealed: cell.hasBomb ? true : cell.isRevealed,
+        }))
       );
       setSquares(updatedSquares);
       setIsGameOver(true);
@@ -53,9 +53,11 @@ export default function BuscaMinas() {
     }
 
     const stack = [{ rowIdx, colIdx }];
+    const newSquares = squares.map((row) => row.map((cell) => ({ ...cell }))); // Crear nueva copia del estado
+
     while (stack.length > 0) {
       const { rowIdx, colIdx } = stack.pop()!;
-      const currentCell = squares[rowIdx][colIdx];
+      const currentCell = newSquares[rowIdx][colIdx];
 
       if (!currentCell.isRevealed) {
         currentCell.isRevealed = true;
@@ -69,8 +71,8 @@ export default function BuscaMinas() {
                 newRow < rows &&
                 newCol >= 0 &&
                 newCol < cols &&
-                !squares[newRow][newCol].hasBomb &&
-                !squares[newRow][newCol].isRevealed
+                !newSquares[newRow][newCol].hasBomb &&
+                !newSquares[newRow][newCol].isRevealed
               ) {
                 stack.push({ rowIdx: newRow, colIdx: newCol });
               }
@@ -79,7 +81,7 @@ export default function BuscaMinas() {
         }
       }
     }
-    setSquares([...squares]);
+    setSquares(newSquares); // Actualizar el estado con una nueva referencia
   };
 
   const setFlag = (
@@ -99,16 +101,16 @@ export default function BuscaMinas() {
 
   useEffect(() => {
     const revealed = squares.reduce((acc, row) => {
-      acc += row.reduce((acc2, sq) => (acc2 += sq.isRevealed ? 1 : 0), 0);
-      return acc;
+      return acc + row.reduce((acc2, sq) => acc2 + (sq.isRevealed ? 1 : 0), 0);
     }, 0);
 
     if (revealed === rows * cols - mines) {
-      alert("You won!");
-      init();
-      return;
+      setTimeout(() => {
+        alert("You won!");
+        init(); // Reiniciar el juego solo cuando ganas
+      }, 300);
     }
-  }, [squares]);
+  }, [squares, init, rows, cols, mines]); // 🔥 Ahora incluimos todas las dependencias necesarias
 
   return (
     <>
