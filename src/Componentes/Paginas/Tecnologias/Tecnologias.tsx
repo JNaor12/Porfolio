@@ -70,27 +70,29 @@ const Tecnologias = () => {
   const observerRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsInView(true);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (observerRef.current) {
-      observer.observe(observerRef.current);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        }
+      });
+    }, { threshold: 0.1 });
+  
+    // Guardamos el valor actual de observerRef en una variable para evitar cambios durante la limpieza
+    const currentRef = observerRef.current;
+  
+    if (currentRef) {
+      observer.observe(currentRef);
     }
-
+  
+    // Cleanup function
     return () => {
-      if (observerRef.current) {
-        observer.unobserve(observerRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
-  }, []);
+  }, []); // Dependencias vacías para que solo se ejecute una vez
+  
 
   return (
     <>
