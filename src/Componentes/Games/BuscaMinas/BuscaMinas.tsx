@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback  } from "react";
 import "../../../App.css";
 import { TSquare } from "./types";
 import { createBoard, randomizeMines, getMinesAround } from "./helper.tsx";
@@ -20,16 +20,16 @@ export default function BuscaMinas() {
   const [squares, setSquares] = useState<TSquare[][]>([]);
   const [isGameOver, setIsGameOver] = useState(false);
 
-  const init = () => {
-    let squares = createBoard(rows, cols); // Crea un nuevo tablero
-    squares = randomizeMines(squares, mines); // Añade minas al tablero
-    squares = getMinesAround(squares); // Calcula minas alrededor
-    setSquares(squares); // Actualiza el estado
-  };
-
+  const init = useCallback(() => {
+    let squares = createBoard(rows, cols);
+    squares = randomizeMines(squares, mines);
+    squares = getMinesAround(squares);
+    setSquares(squares);
+  }, [rows, cols, mines]);
+  
   useEffect(() => {
     init();
-  }, [rows, cols, mines]);
+  }, [init]);
 
   const reveal = (rowIdx: number, colIdx: number) => {
     if (squares[rowIdx][colIdx].isRevealed || squares[rowIdx][colIdx].isFlagged)

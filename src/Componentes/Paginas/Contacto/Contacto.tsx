@@ -11,12 +11,10 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { ReactElement } from "react";
-import { FcAssistant } from "react-icons/fc";
 import { VscGithubInverted } from "react-icons/vsc";
 import { SiGmail } from "react-icons/si";
 import { FaLinkedin } from "react-icons/fa";
 import { IoMdDownload } from "react-icons/io";
-import { MdPhoneAndroid } from "react-icons/md";
 import ComponenteNavLink from "../../ComponenteNavLink.tsx";
 
 interface CardProps {

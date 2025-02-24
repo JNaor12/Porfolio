@@ -1,10 +1,8 @@
 import {
-  Box,
   Image,
   Card,
   CardBody,
   Heading,
-  keyframes,
   Stack,
   Text,
 } from "@chakra-ui/react";
