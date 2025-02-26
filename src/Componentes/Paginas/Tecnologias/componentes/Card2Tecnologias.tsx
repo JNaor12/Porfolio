@@ -32,7 +32,7 @@ export default function Card2Tecnologias({
         my={5}
         mx={[0, 5]}
         overflow={"hidden"}
-        bgImage={'Fondo_blanco.jpg'}
+        bgImage={'recursos/Fondo_blanco.jpg'}
         border={"1px"}
         borderColor="black"
         boxShadow={useColorModeValue("6px 6px 0 black", "6px 6px 0 cyan")}

@@ -9,7 +9,7 @@ const SobreMi = () => {
     <>
       <ComponenteNavLink />
 
-      <Box bgImage={"fondo_dark.jpg"}>
+      <Box bgImage={"recursos/fondo_dark.jpg"}>
         <Box
           bgImage={"recursos/decorao.png"}
           backgroundSize={"100%"}

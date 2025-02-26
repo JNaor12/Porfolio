@@ -70,7 +70,7 @@ export default function ComponenteLogo() {
           opacity={hasAnimated ? 0 : 1} // Desvanecer el elemento después de la animación
           transition="opacity 2s ease-in-out" //
         >
-          <Image src={hasAnimated ? "Boton_Verde.png" : "Boton_Rojo.png"} />
+          <Image src={hasAnimated ? "img/Boton_Verde.png" : "img/Boton_Rojo.png"} />
         </Box>
       </Container>
 

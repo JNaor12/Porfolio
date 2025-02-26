@@ -17,21 +17,21 @@ const Proyectos = () => {
             height="100%"
           >
             <ComponenteCard
-              imagen="Calculadora.jpg"
+              imagen="img/Calculadora.jpg"
               titulo="Calculadora 🖩"
               categoria="App"
               ruta="/calculadora"
             />
 
             <ComponenteCard
-              imagen="busca.webp"
+              imagen="img/busca.webp"
               titulo="💣Busca Minas💣"
               categoria="Juego"
               ruta="/buscaminas"
             />
 
             <ComponenteCard
-              imagen="serpienteBien.jpg"
+              imagen="img/serpienteBien.jpg"
               titulo="🍎Snake🐍"
               categoria="Juego"
               ruta="/snake"

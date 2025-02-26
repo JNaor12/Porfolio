@@ -34,7 +34,7 @@ const Card = ({ heading, description, icon, href, enlace }: CardProps) => {
       borderRadius="lg"
       overflow="hidden"
       p={5}
-      bgImage={"fondo_dark.jpg"}
+      bgImage={"recursos/fondo_dark.jpg"}
     >
       <Stack align={"start"} spacing={2}>
         <Flex
@@ -75,7 +75,7 @@ const Contacto = () => {
     <>
       <ComponenteNavLink />
       <Box
-        bgImage={"fondo_dark.jpg"}
+        bgImage={"recursos/fondo_dark.jpg"}
         w={"100%"}
         minH={"93vh"}
         overflow="hidden"
@@ -120,7 +120,7 @@ const Contacto = () => {
                   heading={"Currículum"}
                   icon={<Icon as={IoMdDownload} w={10} h={10} color={"grey"} />}
                   description={"Descarga mi CV aquí"}
-                  href={"Currículum Vitae Naor_Kadosh(ES).pdf"} // Enlace para descargar
+                  href={"FA/Currículum Vitae Naor_Kadosh(ES).pdf"} // Enlace para descargar
                   enlace={"Descargar"}
                 />
                 <Card

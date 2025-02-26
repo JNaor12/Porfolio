@@ -45,7 +45,7 @@ export default function Simple() {
 
   return (
     <>
-      <Box bgImage={"Banner.jpg"} px={4} color={"white"}>
+      <Box bgImage={"recursos/Banner.jpg"} px={4} color={"white"}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
             size={"md"}
@@ -79,7 +79,7 @@ export default function Simple() {
                 cursor={"pointer"}
                 minW={0}
               >
-                <Avatar size={"md"} src={"Perfil Juan2.png"} />
+                <Avatar size={"md"} src={"FA/Perfil Juan2.png"} />
               </MenuButton>
               <MenuList color={"white"} bg={"#474955"}>
                 <MenuItem bg={"#474955"} as={Link} to="/sobremi">

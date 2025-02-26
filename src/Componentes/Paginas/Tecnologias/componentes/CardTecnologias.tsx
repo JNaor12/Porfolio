@@ -25,7 +25,7 @@ export default function CardTecnologias({ imagen, titulo, subtitulo, bgColor, an
         overflow="hidden"
         variant="outline"
         backgroundColor={'transparent'}
-        bgImage={'fondo_dark.jpg'}
+        bgImage={'recursos/fondo_dark.jpg'}
         left={'25%'}
         color={'white'}
         width={'50%'}

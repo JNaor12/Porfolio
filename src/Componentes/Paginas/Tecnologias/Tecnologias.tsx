@@ -70,21 +70,24 @@ const Tecnologias = () => {
   const observerRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setIsInView(true);
-        }
-      });
-    }, { threshold: 0.1 });
-  
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsInView(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
     // Guardamos el valor actual de observerRef en una variable para evitar cambios durante la limpieza
     const currentRef = observerRef.current;
-  
+
     if (currentRef) {
       observer.observe(currentRef);
     }
-  
+
     // Cleanup function
     return () => {
       if (currentRef) {
@@ -92,7 +95,6 @@ const Tecnologias = () => {
       }
     };
   }, []); // Dependencias vacías para que solo se ejecute una vez
-  
 
   return (
     <>
@@ -100,7 +102,7 @@ const Tecnologias = () => {
 
       {/* Box principal */}
       <Box
-        bgImage={"fondo_dark.jpg"}
+        bgImage={"recursos/fondo_dark.jpg"}
         backgroundPosition={"center"}
         color={"white"}
         minH="200vh" // Aumentar la altura para dar más espacio vertical
@@ -122,7 +124,7 @@ const Tecnologias = () => {
               px: "2",
               py: "1",
               rounded: "full",
-              backgroundImage: "url('Fondo_blanco.jpg')", // Imagen de fondo en el título
+              backgroundImage: "url('recursos/Fondo_blanco.jpg')", // Imagen de fondo en el título
               backgroundSize: "cover",
               backgroundPosition: "center",
               boxShadow: "0px 4px 15px #A1A5AC", // Sombra gris suave
@@ -176,7 +178,7 @@ const Tecnologias = () => {
         <CardTecnologias
           animacion={`${rightToLeft} 2s ease-out forwards`}
           bgColor={"transparent"}
-          imagen={"logo512.png"}
+          imagen={"img/logo512.png"}
           titulo={"React.JS"}
           subtitulo={
             "Es una biblioteca Javascript de código abierto diseñada para crear interfaces de usuario con el objetivo de facilitar el desarrollo de aplicaciones en una sola página. También tengo conocimientos sobre ReactDOM y ReactBOM"
@@ -275,6 +277,28 @@ const Tecnologias = () => {
           }
         />
 
+        <CardTecnologias
+          animacion={`${rightToLeft} 2s ease-out forwards`}
+          bgColor={"transparent"}
+          imagen={"Tecnologias/python.png"}
+          titulo={"Python"}
+          marginRight={"26px"}
+          subtitulo={
+            "Python es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código. Se trata de un lenguaje de programación multiparadigma, ya que soporta parcialmente la orientación a objetos, programación imperativa y, en menor medida, programación funcional."
+          }
+        />
+
+        <CardTecnologias
+          animacion={`${leftToRight} 2s ease-out forwards`}
+          bgColor={"transparent"}
+          imagen={"Tecnologias/nextjs.svg"}
+          titulo={"Next.JS"}
+          marginRight={"26px"}
+          subtitulo={
+            "Next.js es un marco web de desarrollo front-end de React de código abierto creado por Vercel que habilita funcionalidades como la representación del lado del servidor y la generación de sitios web estáticos para aplicaciones web basadas en React."
+          }
+        />
+
         {/* ARREGLAR VISUAL */}
 
         <CardTecnologias
@@ -300,7 +324,7 @@ const Tecnologias = () => {
 
       <Box
         ref={observerRef} // Referencia para el observer
-        bgImage={"fondo_dark.jpg"}
+        bgImage={"recursos/fondo_dark.jpg"}
         backgroundPosition={"center"}
         color={"white"}
         minH="200vh"
@@ -322,7 +346,7 @@ const Tecnologias = () => {
               px: "2",
               py: "1",
               rounded: "full",
-              backgroundImage: "url('Fondo_blanco.jpg')", // Imagen de fondo en el título
+              backgroundImage: "url('recursos/Fondo_blanco.jpg')", // Imagen de fondo en el título
               backgroundSize: "cover",
               backgroundPosition: "center",
               boxShadow: "0px 4px 15px #A1A5AC", // Sombra gris suave

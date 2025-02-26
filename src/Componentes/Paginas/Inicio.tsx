@@ -58,12 +58,12 @@ const Inicio = () => {
     <>
       <ComponenteNavLink />
 
-      <Box bgImage={"fondo_dark.jpg"} height="93vh">
+      <Box bgImage={"recursos/fondo_dark.jpg"} height="93vh">
         <SimpleGrid columns={2} spacing={10} height="100%" alignItems="center">
           <Box display="flex" justifyContent="right" alignItems="center">
             <Image
               boxSize="500px"
-              src="Perfil Juan2.png"
+              src="FA/Perfil Juan2.png"
               alt="Perfil"
               borderRadius="lg"
               boxShadow="0px 0px 30px 15px grey"

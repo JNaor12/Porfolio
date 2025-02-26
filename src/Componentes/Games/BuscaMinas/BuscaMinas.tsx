@@ -204,7 +204,7 @@ export default function BuscaMinas() {
                     >
                       {isGameOver && square.hasBomb ? (
                         <img
-                          src="bomba.png"
+                          src="img/bomba.png"
                           alt="bomba"
                           style={{ width: "100%", height: "100%" }}
                         />
