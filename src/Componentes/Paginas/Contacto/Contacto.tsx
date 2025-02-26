@@ -120,7 +120,7 @@ const Contacto = () => {
                   heading={"Currículum"}
                   icon={<Icon as={IoMdDownload} w={10} h={10} color={"grey"} />}
                   description={"Descarga mi CV aquí"}
-                  href={"Currículum Vitae CV Carnet.pdf"} // Enlace para descargar
+                  href={"Currículum Vitae Naor_Kadosh(ES).pdf"} // Enlace para descargar
                   enlace={"Descargar"}
                 />
                 <Card
